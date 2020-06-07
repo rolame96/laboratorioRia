@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="grid-container" style="padding-left: 30px; padding-top: 30px;">
+    <mat-card class="example-card">
+      <mat-card-header class="titulo">
+        <mat-card-title>{{juego.name}}</mat-card-title>
+        <mat-card-subtitle>{{juego.released}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://media.rawg.io/media/games/088/088b41ca3f9d22163e43be07acf42304.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+          <h4>{{juego.description}}</h4>
+          <h4>Rating: {{juego.rating}}</h4>
+          <h4>Metacritic Score: {{juego.metacritic}}</h4>
+          <h4>Plataformas:</h4>
+          <i *ngFor="let Plataforma of juego.platforms">
+            <li *ngFor="let InfoPlataforma of Plataforma.platform">
+              {{InfoPlataforma.name}}
+           </li>
+          </i>
+          <h4>Genero: </h4>
+          <li *ngFor="let Genero of juego.genres">
+            {{Genero.name}}
+         </li>
+          <h4>Requisitos Minimos: {{juego.platforms}}</h4>
+          <h4>Requisitos Recomendados: </h4>
+      </mat-card-content>
+      <mat-card-actions>
+          <h3>Donde encuentro este juegazo</h3>
+        <button mat-button>Epic</button>
+        <button mat-button>Steam</button>
+        <button mat-button>Origin</button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
