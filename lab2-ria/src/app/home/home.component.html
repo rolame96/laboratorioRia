@@ -2,24 +2,24 @@
 
 <div class="container">
   <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+    <mat-label>Busca un juego</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Counter-Strike">
   </mat-form-field>
 
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table mat-table [dataSource]="this.juegos" matSort>
 
       <!-- ID Column -->
       <ng-container matColumnDef="Nombre">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-        <td mat-cell *matCellDef="let listaJuego"> {{listaJuego.results.name}} </td>
+        <td mat-cell *matCellDef="let listaJuego"> {{listaJuego.name}} </td>
       </ng-container>
 
-      <!-- Progress Column-->
+      <!-- Progress Column
       <ng-container matColumnDef="Imagen">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
-        <td mat-cell *matCellDef="let listaJuego"> {{listaJuego.next}} </td>
-      </ng-container>
+        <td mat-cell *matCellDef="let listasJuego"> {{this.getGames().background_image}} </td>
+      </ng-container>-->
      <!-- <mat-nav-list>
         <h4>juego:</h4>
         <h5 mat-list-item *ngFor="let juego of listaJuego"> - {{juego.name}}</h5>

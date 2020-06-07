@@ -14,27 +14,30 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  private listasJuego: ListaJuegos[];
+  private listasJuego: any;
+  const juegos: any = [{name: "Juego 1"}, {name: "Juego 2"}, {name: "Juego 3"}];
   /** Based on the screen size, switch from standard to one column per row */
-  displayedColumns: string[] = ['Nombre', 'Imagen'];
-  dataSource: MatTableDataSource<ListaJuegos>;
+  displayedColumns: string[] = ['Nombre'];
+  dataSource: any;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   constructor(private gamesService: GamesService) {}
 
   ngOnInit(): void {
-    this.getGames()
+    this.getGames();
   }
 
-   getGames(): void{
-     this.gamesService.getGames().subscribe((listaJuego: ListaJuegos[])  => {
-       console.log(listaJuego);
-       this.dataSource = new MatTableDataSource(listaJuego);
-     });
+   getGames(){
+    this.gamesService.getGames().subscribe(res => {
+      console.log(res.results);
+      this.listasJuego = res.results;
+      console.log(this.listasJuego);
+      return this.listasJuego;
+      });
    }
 
-
+   //this.dataSource = new MatTableDataSource(recursoTemp);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

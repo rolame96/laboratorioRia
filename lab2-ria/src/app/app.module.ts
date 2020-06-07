@@ -26,6 +26,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GamesService } from './services/games.service';
 
 @NgModule({
   declarations: [
@@ -56,9 +58,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatPaginatorModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
