@@ -10,8 +10,6 @@
       </mat-card-header>
       <img mat-card-image src={{juego.background_image}} alt="Photo of a Shiba Inu">
       <mat-card-content>
-          <h4>Etiqueta: {{juego.slug}}</h4>
-          <!-- <h4>{{juego.description}}</h4> -->
           <h4>Rating: {{juego.rating}}</h4>
           <h4>Metacritic Score: {{juego.metacritic}}</h4>
           <h4>Plataformas:</h4>
@@ -21,8 +19,14 @@
           <li *ngFor="let Genero of juego.genres">
             {{Genero.name}}
          </li>
-          <h4>Requisitos Minimos: {{juego.platforms}}</h4>
-          <h4>Requisitos Recomendados: </h4>
+
+         <h4>Requisitos Minimos:  </h4>
+          <li *ngFor="let Plataforma of juego.platforms">
+            {{Plataforma.requirements_en.minimun}}
+         </li>
+
+
+
       </mat-card-content>
       <mat-card-actions>
           <h3>Donde encuentro este juegazo</h3>
