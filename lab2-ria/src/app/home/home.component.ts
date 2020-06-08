@@ -14,10 +14,10 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  private listasJuego: any;
-  const juegos: any = [{name: "Juego 1"}, {name: "Juego 2"}, {name: "Juego 3"}];
+  listasJuego: any;
+  //const juegos: any = [{name: "Juego 1"}, {name: "Juego 2"}, {name: "Juego 3"}];
   /** Based on the screen size, switch from standard to one column per row */
-  displayedColumns: string[] = ['Nombre'];
+  displayedColumns: string[] = ['Nombre', 'Imagen'];
   dataSource: any;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit{
       console.log(res.results);
       this.listasJuego = res.results;
       console.log(this.listasJuego);
-      return this.listasJuego;
       });
    }
 
