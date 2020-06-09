@@ -13,6 +13,7 @@ import { Genero } from '../model/genero';
 })
 export class JuegoComponent implements OnInit {
 
+  
   juego: Juego;
   juegoId: string;
 
@@ -37,6 +38,7 @@ export class JuegoComponent implements OnInit {
       }
     );
   }
+
 
 
 }
