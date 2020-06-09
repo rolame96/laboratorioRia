@@ -10,21 +10,30 @@
       </mat-card-header>
       <img mat-card-image src={{juego.background_image}} alt="Photo of a Shiba Inu">
       <mat-card-content>
-          <h4>Descripcion:</h4>
+          <h4 ><strong>Descripción:</strong></ h4>
             <div [innerHTML]="juego.description" ></div>
           
-          <h4>Rating: {{juego.rating}}</h4>
-          <h4>Metacritic Score: {{juego.metacritic}}</h4>
-          <h4>Plataformas:</h4>
-          <li *ngFor="let item of juego.platforms">
-            {{item.platform.name}}
-          </li>
-          <h4>Genero: </h4>
-          <li *ngFor="let Genero of juego.genres">
-            {{Genero.name}}
-         </li>
+          <h4><strong>Rating: </strong>{{juego.rating}}</h4>
+          <h4><strong>Metacritic Score: </strong> {{juego.metacritic}}</h4>
+          
+          <tr>
+            <td class="plataforma">
+              <h4><strong>Plataformas:</strong></h4>
+              <li *ngFor="let item of juego.platforms">
+                {{item.platform.name}}
+              </li>
+            </td>
+            <td>
+              <h4 class="genero"><strong>Genero: </strong></h4>
+              <li *ngFor="let Genero of juego.genres">
+                {{Genero.name}}
+             </li>
+            </td>
+          </tr>
+ 
+          
          <br>
-         <h4>Requisitos:</h4>
+         <h4><strong>Requisitos: </strong></h4>
          <div *ngFor="let item of juego.platforms">
           <div *ngIf="(item.platform.id == 4)">
             <div [innerHTML]="item.requirements.minimum" ></div>
@@ -39,7 +48,7 @@
          </div>
 
       </mat-card-content>
-      <h3>COMPRA EL JUEGO</h3> 
+      <h3><strong>COMPRA EL JUEGO</strong></h3> 
       <mat-card-actions *ngFor="let item of juego.stores">
            
         <div *ngIf="(item != null)" style="justify-content: center;">

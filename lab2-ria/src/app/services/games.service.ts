@@ -13,7 +13,7 @@ export class GamesService {
   constructor(private http: HttpClient) { }
 
   public getGames(){
-    return this.http.get(`${this.baseUrl}?page_size=50`);
+    return this.http.get(`${this.baseUrl}?page_size=100&ordering=-rating`);
   }
 
   public getGameById(id: string){
