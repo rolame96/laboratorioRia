@@ -24,13 +24,14 @@
          <h4>Requisitos</h4>
          <div *ngFor="let item of juego.platforms">
           <div *ngIf="(item.platform.id == 4)">
-            {{item.requirements.minimum}}
+            <div [innerHTML]="item.requirements.minimum" ></div>
+            
           </div>
          </div>
          <br>
          <div *ngFor="let item of juego.platforms">
           <div *ngIf="(item.platform.id == 4)">
-            {{item.requirements.recommended}}
+            <div [innerHTML]="item.requirements.recommended" ></div>
           </div>
          </div>
 

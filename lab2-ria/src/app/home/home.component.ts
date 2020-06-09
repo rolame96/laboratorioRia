@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit{
 
    getGames(){
     this.gamesService.getGames().subscribe(res => {
-      console.log(res.results);
+      //console.log(res.results);
       this.listasJuego = res.results;
       console.log(this.listasJuego);
       });
