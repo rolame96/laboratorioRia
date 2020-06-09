@@ -28,6 +28,7 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamesService } from './services/games.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { GamesService } from './services/games.service';
     MatPaginatorModule,
     MaterialModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [GamesService],
   bootstrap: [AppComponent]

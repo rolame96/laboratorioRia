@@ -26,12 +26,14 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.getGames();
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
    getGames(){
-    this.gamesService.getGames().subscribe(res => {
-      console.log(res.results);
-      this.listasJuego = res.results;
+    this.gamesService.getGames().subscribe((res: any[]) => {
+      console.log('res ', res);
+      this.listasJuego = res;
       console.log(this.listasJuego);
       });
    }

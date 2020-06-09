@@ -1,1 +1,56 @@
-<p>buscador works!</p>
+<app-navbar></app-navbar>
+<div style="margin: 50px;">
+
+  <div class="container" style="text-align:center">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Buscador</h1>
+        <mat-form-field class="example-form-field">
+          <mat-label>Escriba el nombre del juego</mat-label>
+          <input matInput type="text" #movieSearchInput class="form-control" placeholder="Escriba el nombre del juego">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row" *ngIf="isSearching">
+      <div class="col-12 text-center">
+
+        <h4>Buscando ... </h4>
+
+      </div>
+    </div>
+    <div class="row">
+      <ng-container >
+        <div class="col-12 text-center">
+          <div class="alert alert-danger" role="alert">
+            {{apiResponse['Error']}}
+
+          </div>
+        </div>
+
+      </ng-container>
+
+
+        <div class="col-3" *ngFor="let juego of apiResponse.results">
+          {{juego['name']}}
+          <div class="card" style="margin:5px;">
+            <img class="card-img-top" src="{{juego['background_image']}}">
+            <div class="card-body">
+              <h5 class="card-title">{{juego['name']}}</h5>
+              <p class="card-text">Lanzamiento: {{juego['released']}}</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
