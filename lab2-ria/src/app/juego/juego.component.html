@@ -12,10 +12,10 @@
       <mat-card-content>
           <h4><strong>Descripción:</strong></h4>
             <div [innerHTML]="juego.description" ></div>
-          
+
           <h4><strong>Rating: </strong>{{juego.rating}}</h4>
           <h4><strong>Metacritic Score: </strong> {{juego.metacritic}}</h4>
-          
+
           <tr>
             <td class="plataforma">
               <h4><strong>Plataformas:</strong></h4>
@@ -30,8 +30,8 @@
              </li>
             </td>
           </tr>
- 
-          
+
+
          <br>
          <h4><strong>Requisitos: </strong></h4>
          <div *ngFor="let item of juego.platforms">
@@ -50,18 +50,12 @@
 
 
       </mat-card-content>
-      <h3><strong>COMPRA EL JUEGO</strong></h3> 
-      </mat-card-content> -->
-        </div>
-
-          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-        <div class="row">
-      <!-- <mat-card-content>
+      <h3><strong>COMPRA EL JUEGO</strong></h3>
       <mat-card-actions *ngFor="let item of juego.stores">
 
         <div *ngIf="(item != null)" style="justify-content: center;">
-        
-        <div style="justify-content: center; text-align: center; align-items: center; position: center;">          
+
+        <div style="justify-content: center; text-align: center; align-items: center; position: center;">
           <a mat-raised-button href={{item.url}} style="align-items: center; text-align: center;">
             <div *ngIf="(item.store.name =='Epic Games')">
               <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Epic_Games_logo.png/527px-Epic_Games_logo.png">
@@ -77,10 +71,10 @@
             </div>
             <div *ngIf="(item.store.name =='Steam')">
               <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/800px-Steam_icon_logo.svg.png">
-            </div>           
-          </a>        
+            </div>
+          </a>
         </div>
-    
+
       </div>
 
       </mat-card-actions>
