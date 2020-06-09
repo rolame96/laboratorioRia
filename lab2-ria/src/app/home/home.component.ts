@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit{
       const listaAux: any[] = [];
       for (const item of res.results) {
           let obj1 = new Result();
+          obj1.id = item.id;
           obj1.name = item.name;
           obj1.released = item.released;
           obj1.rating_top = item.rating_top;
