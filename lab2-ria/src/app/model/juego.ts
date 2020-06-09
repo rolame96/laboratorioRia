@@ -8,6 +8,7 @@ export interface Juego{
     name: string;
     released: Date;
     background_image: string;
+    description: string;
     rating: string;
     rating_top: string;
     metacritic: string;
