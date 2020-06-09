@@ -13,7 +13,7 @@
 
 @media screen and (min-width: 48em) {
 	.custom-logo-link img {
-		max-width: 100px;
+    max-width: 100px;
 	}
 }
 
@@ -21,4 +21,11 @@
     /* display: inline-block; */
     max-height: 80px;
     /* width: auto; */
+    display: block;
+
+    
+}
+
+.container {
+  background-color: black;
 }

@@ -29,6 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamesService } from './services/games.service';
 import { FormsModule } from '@angular/forms';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     JuegoComponent,
     LayoutComponent,
     NavbarComponent,
+    ListaJuegosComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     HttpClientModule,
     FontAwesomeModule,
+    MatSortModule,
+    MatTableModule,
     FormsModule
   ],
   providers: [GamesService],

@@ -6,6 +6,7 @@ import { ListaJuegos } from '../model/listaJuegos';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import { Result } from '../model/results';
 
 
 @Component({
@@ -14,14 +15,11 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  listasJuego: any;
-  //const juegos: any = [{name: "Juego 1"}, {name: "Juego 2"}, {name: "Juego 3"}];
-  /** Based on the screen size, switch from standard to one column per row */
-  displayedColumns: string[] = ['Nombre', 'Imagen'];
-  dataSource: any;
-
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  // displayedColumns: string[] = ['Nombre', 'Rating', 'Fecha de Lanzamiento'];
+  dataSource: MatTableDataSource<Result>;
+  existeRecursos = false;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
   constructor(private gamesService: GamesService) {}
 
   ngOnInit(): void {
@@ -33,19 +31,17 @@ export class HomeComponent implements OnInit{
    getGames(){
     this.gamesService.getGames().subscribe((res: any[]) => {
       console.log('res ', res);
-      this.listasJuego = res;
-      console.log(this.listasJuego);
+      const listaAux: any[] = [];
+      for (const item of res.results) {
+          let obj1 = new Result();
+          obj1.name = item.name;
+          obj1.released = item.released;
+          obj1.rating_top = item.rating_top;
+          listaAux.push(obj1);
+      }
+      console.log('listaAux ', listaAux);
+      this.existeRecursos = true;
+      this.dataSource = new MatTableDataSource(listaAux);
       });
    }
-
-   //this.dataSource = new MatTableDataSource(recursoTemp);
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 }
