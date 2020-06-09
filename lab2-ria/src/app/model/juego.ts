@@ -17,5 +17,8 @@ export interface Juego{
     genres: Genero[];
     stores: Tiendas[];
     short_screenshots: Screenshot[];
+    clip: {
+        clip: string;
+    }
 
 }
