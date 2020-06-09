@@ -15,5 +15,8 @@ export interface Juego{
     platforms: Plataforma[];
     genres: Genero[];
     stores: Tiendas[];
+    clip: {
+        clip: string;
+    }
 
 }
