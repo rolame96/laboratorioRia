@@ -32,6 +32,9 @@ import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,7 @@ import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
     ListaJuegosComponent,
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
@@ -67,7 +70,10 @@ import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
     MatSortModule,
     MatTableModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GalleryModule,
+    LightboxModule,
+    NgxGalleryModule
   ],
   providers: [GamesService],
   bootstrap: [AppComponent]

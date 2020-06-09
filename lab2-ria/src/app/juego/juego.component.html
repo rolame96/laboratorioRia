@@ -12,7 +12,7 @@
       <mat-card-content>
           <h4>Descripcion:</h4>
             <div [innerHTML]="juego.description" ></div>
-          
+
           <h4>Rating: {{juego.rating}}</h4>
           <h4>Metacritic Score: {{juego.metacritic}}</h4>
           <h4>Plataformas:</h4>
@@ -28,7 +28,7 @@
          <div *ngFor="let item of juego.platforms">
           <div *ngIf="(item.platform.id == 4)">
             <div [innerHTML]="item.requirements.minimum" ></div>
-            
+
           </div>
          </div>
          <br>
@@ -39,12 +39,19 @@
          </div>
 
       </mat-card-content>
-      <h3>COMPRA EL JUEGO</h3> 
+      <!-- <mat-card-content>
+        <div class="row">
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+
+        </div>
+      </mat-card-content> -->
+
+      <h3>COMPRA EL JUEGO</h3>
       <mat-card-actions *ngFor="let item of juego.stores">
-           
+
         <div *ngIf="(item != null)" style="justify-content: center;">
-           
-        
+
+
         <a mat-raised-button href={{item.url}} style="align-items: center; text-align: center;">
           <div *ngIf="(item.store.name =='Epic Games')">
             <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Epic_Games_logo.png/527px-Epic_Games_logo.png">
@@ -62,7 +69,9 @@
             <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/800px-Steam_icon_logo.svg.png">
           </div>
         </a>
+
       </div>
+
       </mat-card-actions>
     </mat-card>
   </div>

@@ -23,9 +23,13 @@
     /* width: auto; */
     display: block;
 
-    
+
 }
 
 .container {
   background-color: black;
+}
+
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
 }

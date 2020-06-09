@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
+<mat-toolbar>Buscador</mat-toolbar>
 <div style="margin: 50px;">
 
   <div class="container" style="text-align:center">
     <div class="row">
       <div class="col-12 text-center">
-        <h1>Buscador</h1>
         <mat-form-field class="example-form-field">
           <mat-label>Escriba el nombre del juego</mat-label>
           <input matInput type="text" #movieSearchInput class="form-control" placeholder="Escriba el nombre del juego">
@@ -18,12 +18,12 @@
     <div class="row" *ngIf="isSearching">
       <div class="col-12 text-center">
 
-        <h4>Buscando ... </h4>
+        <mat-progress-bar mode="query"></mat-progress-bar>
 
       </div>
     </div>
     <div class="row">
-      <ng-container >
+      <ng-container *ngIf="apiResponse['Response'] == 'False'; else elseTemplate">
         <div class="col-12 text-center">
           <div class="alert alert-danger" role="alert">
             {{apiResponse['Error']}}
@@ -33,7 +33,7 @@
 
       </ng-container>
 
-
+      <ng-template #elseTemplate>
         <div class="col-3" *ngFor="let juego of apiResponse.results">
           {{juego['name']}}
           <div class="card" style="margin:5px;">
@@ -46,7 +46,7 @@
           </a>
           </div>
         </div>
-
+      </ng-template>
     </div>
   </div>
 

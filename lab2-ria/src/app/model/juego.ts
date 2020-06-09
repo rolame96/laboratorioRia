@@ -1,6 +1,7 @@
 import { Genero } from './genero';
 import { Plataforma } from './plataforma';
 import { Tiendas } from './tiendas';
+import { Screenshot } from './screenshot';
 
 export interface Juego{
     id: string;
@@ -15,5 +16,6 @@ export interface Juego{
     platforms: Plataforma[];
     genres: Genero[];
     stores: Tiendas[];
+    short_screenshots: Screenshot[];
 
 }
