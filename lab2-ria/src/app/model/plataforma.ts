@@ -3,11 +3,12 @@ import { InfoPlataforma } from './infoPlataforma';
 export interface Plataforma{
     released_at: Date;
     platform: {
-        name: string;
         id: number;
+        name: string;
+        
     }
     requirements: {
-        minimun: string;
+        minimum: string;
         recommended: string;
     }
 }

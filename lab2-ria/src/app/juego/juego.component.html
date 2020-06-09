@@ -13,27 +13,49 @@
           <h4>Rating: {{juego.rating}}</h4>
           <h4>Metacritic Score: {{juego.metacritic}}</h4>
           <h4>Plataformas:</h4>
-          <i *ngFor="let Plataforma of juego.platforms">
-          </i>
+          <li *ngFor="let item of juego.platforms">
+            {{item.platform.name}}
+          </li>
           <h4>Genero: </h4>
           <li *ngFor="let Genero of juego.genres">
             {{Genero.name}}
          </li>
-
-         <h4>Requisitos Minimos:  </h4>
-          <li *ngFor="let Plataforma of juego.platforms">
-            {{Plataforma.requirements_en.minimun}}
-         </li>
+         <br>
+         <h4>Requisitos</h4>
+         <div *ngFor="let item of juego.platforms">
+          <div *ngIf="(item.platform.id == 4)">
+            {{item.requirements.minimum}}
+          </div>
+         </div>
+         <br>
+         <div *ngFor="let item of juego.platforms">
+          <div *ngIf="(item.platform.id == 4)">
+            {{item.requirements.recommended}}
+          </div>
+         </div>
 
 
 
       </mat-card-content>
-      <mat-card-actions>
-          <h3>Donde encuentro este juegazo</h3>
-        <button mat-button>Epic</button>
-        <button mat-button>Steam</button>
-        <button mat-button>Origin</button>
-
+      <h3>COMPRA EL JUEGO</h3>
+      <mat-card-actions *ngFor="let item of juego.stores">          
+        <a mat-raised-button href={{item.url}}>
+          <div *ngIf="(item.store.name =='Epic Games')">
+            <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Epic_Games_logo.png/527px-Epic_Games_logo.png">
+          </div>
+          <div *ngIf="(item.store.name =='PlayStation Store')">
+            <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/PlayStation_Store.png">
+          </div>
+          <div *ngIf="(item.store.name =='Xbox Store')">
+            <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Xbox.svg/250px-Xbox.svg.png">
+          </div>
+          <div *ngIf="(item.store.name =='Xbox 360 Store')">
+            <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Xbox_360_full_logo.svg/1920px-Xbox_360_full_logo.svg.png">
+          </div>
+          <div *ngIf="(item.store.name =='Steam')">
+            <img class="iconProducto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/800px-Steam_icon_logo.svg.png">
+          </div>
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>
