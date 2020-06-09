@@ -38,16 +38,6 @@
           </div>
          </div>
 
-         <h4>Requisitos Minimos:  </h4>
-          <li *ngFor="let Plataforma of juego.platforms">
-            {{Plataforma.requirements.minimun}}
-         </li>
-         <h4>Requisitos Recomendados:  </h4>
-          <li *ngFor="let Plataforma of juego.platforms">
-            {{Plataforma.requirements.recommended}}
-         </li>
-
-
       </mat-card-content>
       <h3>COMPRA EL JUEGO</h3> 
       <mat-card-actions *ngFor="let item of juego.stores">

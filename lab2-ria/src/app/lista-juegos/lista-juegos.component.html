@@ -9,7 +9,7 @@
   
         <ng-container matColumnDef="Nombre">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-          <td mat-cell *matCellDef="let listaJuego"><a routerLink="/juegos/{{listaJuego.id}}">{{listaJuego.name}}</a> </td>
+          <td mat-cell *matCellDef="let listaJuego"><a href="juegos/{{listaJuego['id']}}">{{listaJuego.name}}</a> </td>
         </ng-container>
   
         <ng-container matColumnDef="Rating">

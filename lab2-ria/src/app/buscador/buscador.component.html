@@ -37,11 +37,13 @@
         <div class="col-3" *ngFor="let juego of apiResponse.results">
           {{juego['name']}}
           <div class="card" style="margin:5px;">
+            <a mat-button href="juegos/{{juego['id']}}">
             <img class="card-img-top" src="{{juego['background_image']}}">
             <div class="card-body">
               <h5 class="card-title">{{juego['name']}}</h5>
               <p class="card-text">Lanzamiento: {{juego['released']}}</p>
             </div>
+          </a>
           </div>
         </div>
 

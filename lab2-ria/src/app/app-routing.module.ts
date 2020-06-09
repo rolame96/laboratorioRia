@@ -25,7 +25,7 @@ const routes: Routes = [
       component: BuscadorComponent
     },
     {
-      path: 'juegos/:juego',
+      path: 'juegos/:id',
       component: JuegoComponent
     }
   ],

@@ -44,8 +44,7 @@ import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
     ListaJuegosComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule,    
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
@@ -67,7 +66,8 @@ import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
     FontAwesomeModule,
     MatSortModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [GamesService],
   bootstrap: [AppComponent]
