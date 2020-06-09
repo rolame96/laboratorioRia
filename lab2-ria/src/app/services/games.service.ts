@@ -13,10 +13,11 @@ export class GamesService {
   constructor(private http: HttpClient) { }
 
   public getGames(){
-    return this.http.get(this.baseUrl);
+    return this.http.get(`${this.baseUrl}?page_size=50`);
   }
 
   public getGameById(id: string){
     return this.http.get(`${this.baseUrl}/${id}`);
   }
+
 }

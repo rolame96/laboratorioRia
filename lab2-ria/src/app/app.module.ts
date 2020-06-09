@@ -28,6 +28,9 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamesService } from './services/games.service';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { GamesService } from './services/games.service';
     JuegoComponent,
     LayoutComponent,
     NavbarComponent,
+    ListaJuegosComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,9 @@ import { GamesService } from './services/games.service';
     MatPaginatorModule,
     MaterialModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [GamesService],
   bootstrap: [AppComponent]
