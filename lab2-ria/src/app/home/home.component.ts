@@ -32,14 +32,14 @@ export class HomeComponent implements OnInit{
     this.gamesService.getGames().subscribe((res: any[]) => {
       console.log('res ', res);
       const listaAux: any[] = [];
-      for (const item of res.results) {
+      /*for (const item of res.results) {
           let obj1 = new Result();
           obj1.id = item.id;
           obj1.name = item.name;
           obj1.released = item.released;
           obj1.rating = item.rating;
           listaAux.push(obj1);
-      }
+      }*/
       console.log('listaAux ', listaAux);
       this.existeRecursos = true;
       this.dataSource = new MatTableDataSource(listaAux);
