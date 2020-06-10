@@ -1,5 +1,8 @@
 **Laboratorio RIA 2020**
 
+Para el laboratorio utilizamos Angular, el cual es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página.
+La API que consumimos es https://api.rawg.io/
+
 Santiago Chabert,
 Rodrigo Lame,
 Alejandro Rodriguez,
