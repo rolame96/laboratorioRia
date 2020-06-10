@@ -4,10 +4,10 @@ import { Tiendas } from './tiendas';
 import { Screenshot } from './screenshot';
 
 export interface Juego{
-    id: string;
+    id: number;
     slug: string;
     name: string;
-    released: Date;
+    released: string;
     background_image: string;
     description: string;
     rating: string;
