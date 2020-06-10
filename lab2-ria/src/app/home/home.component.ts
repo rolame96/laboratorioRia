@@ -7,6 +7,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { Result } from '../model/results';
+import { Juego } from '../model/juego';
+import { Inicio } from '../model/inicio';
 
 
 @Component({
@@ -29,7 +31,7 @@ export class HomeComponent implements OnInit{
   }
 
    getGames(){
-    this.gamesService.getGames().subscribe((res: any[]) => {
+    this.gamesService.getGames().subscribe((res: Inicio) => {
       console.log('res ', res);
       const listaAux: any[] = [];
       /*for (const item of res.results) {
