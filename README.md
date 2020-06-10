@@ -1,8 +1,8 @@
 **Laboratorio RIA 2020**
 
-Santiago Chabert
-Rodrigo Lame
-Alejandro Rodriguez
+Santiago Chabert,
+Rodrigo Lame,
+Alejandro Rodriguez,
 
 **Instalacion de Angular**
 
@@ -33,6 +33,12 @@ El comando ng new imprime en pantalla informacion acerca de las caracteristicas 
 El CLI crea un nuevo workspace y una simple app de bienvenida, lista para correr.
 
 **Paso 3: Correr la aplicacion**
+
+**IMPORTANTE!** 
+**ANTES DE CORRER LA APLICACION CORRER EL SIGUIENTE COMANDO EN LA RUTA DE LA APLICACION**
+
+| npm install |
+| ------ |
 
 El Angular CLI incluye un servidor, para que tu puedas facilmente buildear y deployar la aplicacion localmente.
 
